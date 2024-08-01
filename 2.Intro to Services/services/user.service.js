@@ -1,12 +1,12 @@
 import { ServiceBroker } from "moleculer";
-const broker=new ServiceBroker();
+const userService=new ServiceBroker();
 
 function generateId(){
     return Math.floor(Math.random()*1000);
 }
 const users=[];
 
-broker.createService({
+userService.createService({
     name:"user",
     actions:{
         async createUser(ctx){
@@ -21,4 +21,4 @@ broker.createService({
     },
 });
 
-export default broker;
+export default userService;
